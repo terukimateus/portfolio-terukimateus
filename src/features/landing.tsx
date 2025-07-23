@@ -3,12 +3,30 @@ import Technologies from "./heros/Technologies";
 import { GlowingCards } from "@/components/GlowingCard";
 import Icon from "@/components/Icon";
 import NavbarFeat from "@/components/Navbar";
+import GlowingButton from "@/components/GlowingButton";
 
 const cards = [
   {
     icon: <Icon family="Lucide" name="LuBox" />,
     area: "md:[grid-area:1/1/1/13] xl:[grid-area:1/1/1/13]",
     title: "BR Docs",
+    extra: (
+      <div className="flex gap-2">
+        <GlowingButton
+          icon={<Icon family="Lucide" name="LuGithub" size={18} />}
+          href=""
+        >
+          View on GitHub
+        </GlowingButton>
+        <GlowingButton
+          icon={<Icon family="DevIcons" name="DiNpm" size={24} />}
+          href="https://br-docs.vercel.app/"
+          target="_blank"
+        >
+          Package
+        </GlowingButton>
+      </div>
+    ),
     description:
       "Open-source package for formatting, validating, and generating Brazilian documents.",
   },
@@ -16,6 +34,23 @@ const cards = [
     icon: <Icon family="Lucide" name="LuShoppingBag" />,
     area: "md:[grid-area:2/1/4/5] xl:[grid-area:2/1/3/8]",
     title: "D'amore Boutique",
+    extra: (
+      <div className="flex flex-wrap gap-2">
+        <GlowingButton
+          icon={<Icon family="Lucide" name="LuGithub" size={18} />}
+          href=""
+        >
+          View on GitHub
+        </GlowingButton>
+        <GlowingButton
+          icon={<Icon family="Lucide" name="LuLink" size={18} />}
+          href="https://damore-boutique.vercel.app/"
+          target="_blank"
+        >
+          Website
+        </GlowingButton>
+      </div>
+    ),
     description: "Institutional website for a fashion boutique.",
   },
   {
