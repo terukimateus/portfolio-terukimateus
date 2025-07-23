@@ -4,12 +4,24 @@ import { GlowingCards } from "@/components/GlowingCard";
 import Icon from "@/components/Icon";
 import NavbarFeat from "@/components/Navbar";
 import GlowingButton from "@/components/GlowingButton";
+import CodeBlock from "@/components/Codeblock";
+
+const BR_DOCS_CODE = `import { Cpf, Cnpj } from "br-docs";
+
+Cpf.isValid("123.456.789-09"); // true
+Cnpj.format("11222333000181"); // '11.222.333/0001-81'`;
 
 const cards = [
   {
-    icon: <Icon family="Lucide" name="LuBox" />,
-    area: "md:[grid-area:1/1/1/13] xl:[grid-area:1/1/1/13]",
+    area: "md:[grid-area:3/1/1/13]",
     title: "BR Docs",
+    cover: (
+      <CodeBlock
+        language="typescript"
+        filename="br-docs.ts"
+        code={BR_DOCS_CODE}
+      />
+    ),
     extra: (
       <div className="flex gap-2">
         <GlowingButton
@@ -19,7 +31,7 @@ const cards = [
           View on GitHub
         </GlowingButton>
         <GlowingButton
-          icon={<Icon family="DevIcons" name="DiNpm" size={24} />}
+          icon={<Icon family="Lucide" name="LuLink" size={18} />}
           href="https://br-docs.vercel.app/"
           target="_blank"
         >
@@ -32,7 +44,7 @@ const cards = [
   },
   {
     icon: <Icon family="Lucide" name="LuShoppingBag" />,
-    area: "md:[grid-area:2/1/4/5] xl:[grid-area:2/1/3/8]",
+    area: "md:[grid-area:7/1/3/8]",
     title: "D'amore Boutique",
     extra: (
       <div className="flex flex-wrap gap-2">
@@ -55,8 +67,25 @@ const cards = [
   },
   {
     icon: <Icon family="Lucide" name="LuVolleyball" />,
-    area: "md:[grid-area:2/5/4/13] xl:[grid-area:2/8/2/13]",
+    area: "md:[grid-area:7/8/3/13]",
     title: "Rent a Court",
+    extra: (
+      <div className="flex flex-wrap gap-2">
+        <GlowingButton
+          icon={<Icon family="Lucide" name="LuGithub" size={18} />}
+          href=""
+        >
+          View on GitHub
+        </GlowingButton>
+        <GlowingButton
+          icon={<Icon family="Lucide" name="LuLink" size={18} />}
+          href="https://rent-a-court.vercel.app/"
+          target="_blank"
+        >
+          Website
+        </GlowingButton>
+      </div>
+    ),
     description: "Platform for renting sports courts, with a focus on tennis.",
   },
 ];
