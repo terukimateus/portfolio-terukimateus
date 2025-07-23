@@ -1,10 +1,12 @@
 import { GlowingEffect } from "@/components/ui/GlowingEffect";
+import type { ReactNode } from "react";
 
 type GlowingCardsProps = {
   cards: {
-    icon: React.ReactNode;
+    icon: ReactNode;
     area: string;
     title: string;
+    extra?: ReactNode;
     description: React.ReactNode;
   }[];
 };
@@ -19,6 +21,7 @@ export function GlowingCards({ cards }: GlowingCardsProps) {
           icon={card.icon}
           title={card.title}
           description={card.description}
+          extra={card.extra}
         />
       ))}
     </ul>
@@ -27,12 +30,13 @@ export function GlowingCards({ cards }: GlowingCardsProps) {
 
 interface GridItemProps {
   area: string;
-  icon: React.ReactNode;
+  icon: ReactNode;
   title: string;
-  description: React.ReactNode;
+  description: ReactNode;
+  extra?: ReactNode;
 }
 
-const GridItem = ({ area, icon, title, description }: GridItemProps) => {
+const GridItem = ({ area, icon, title, extra, description }: GridItemProps) => {
   return (
     <li className={`min-h-[14rem] list-none ${area}`}>
       <div className="relative h-full rounded-2xl border p-2 md:rounded-3xl md:p-3">
@@ -55,6 +59,7 @@ const GridItem = ({ area, icon, title, description }: GridItemProps) => {
               <h2 className="font-sans text-sm/[1.125rem] text-black md:text-base/[1.375rem] dark:text-neutral-400 [&_b]:md:font-semibold [&_strong]:md:font-semibold">
                 {description}
               </h2>
+              {extra}
             </div>
           </div>
         </div>
