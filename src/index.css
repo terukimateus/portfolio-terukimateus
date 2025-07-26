@@ -49,6 +49,7 @@ body {
   --color-sidebar-ring: var(--sidebar-ring);
   --animate-scroll: scroll var(--animation-duration, 40s)
     var(--animation-direction, forwards) linear infinite;
+  --animate-move: move 5s linear infinite;
 }
 
 :root {
@@ -123,6 +124,15 @@ body {
 @keyframes scroll {
   to {
     transform: translate(calc(-50% - 0.5rem));
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(-200px);
+  }
+  100% {
+    transform: translateX(200px);
   }
 }
 

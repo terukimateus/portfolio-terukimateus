@@ -1,0 +1,69 @@
+import ExpandableCard, { type Card } from "@/components/ExpandableCards";
+import HoverButtonGradient from "@/components/HoverButtonGradient";
+import Section from "@/components/Section";
+
+const cards: Card[] = [
+  {
+    description:
+      "Useful tips and tricks to master Jest and React Testing Library.",
+    title: "How masterize Jest and React Testing Library",
+    src: "src/assets/jest-post.png",
+    ctaLink: "https://ui.aceternity.com/templates",
+    posted: "12/05/2025",
+    readTime: "10 min",
+    groups: ["Performance", "Testing"],
+    content: () => {
+      return (
+        <p>
+          This article provides a comprehensive guide to mastering Jest and
+          React Testing Library, covering essential tips and tricks for
+          effective testing in React applications. It includes practical
+          examples and best practices to enhance your testing skills.
+        </p>
+      );
+    },
+  },
+  {
+    description:
+      "A comprehensive guide to mastering React Testing Library with practical examples.",
+    title: "Mastering React Testing Library",
+    src: "src/assets/jest-post.png",
+    posted: "12/05/2025",
+    readTime: "10 min",
+    groups: ["Testing", "React"],
+    ctaLink: "https://ui.aceternity.com/templates",
+    content: () => {
+      return (
+        <p>
+          This article provides a comprehensive guide to mastering React Testing
+          Library, including practical examples and best practices for writing
+          effective tests in React applications.
+        </p>
+      );
+    },
+  },
+];
+
+const Posts = () => {
+  return (
+    <Section>
+      <span className="text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-br from-blue-300 to-foreground">
+        Latest articles
+      </span>
+      <ExpandableCard cards={cards} />
+
+      <HoverButtonGradient>
+        <a
+          href="https://ui.aceternity.com/templates"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-md font-normal"
+        >
+          Read more articles
+        </a>
+      </HoverButtonGradient>
+    </Section>
+  );
+};
+
+export default Posts;
