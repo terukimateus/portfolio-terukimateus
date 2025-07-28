@@ -8,7 +8,7 @@ const cards = [BrDocsCard, DamoreCard, RentCard];
 
 const Projects = () => {
   return (
-    <Section>
+    <Section id="projects">
       <span className="text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-foreground">
         Some projects I have worked on
       </span>

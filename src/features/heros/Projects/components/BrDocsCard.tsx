@@ -11,7 +11,7 @@ Cep.isValid("01234-567"); // true
 Cep.format("01234567"); // '01234-567'`;
 
 const brDocsCard = {
-  area: "md:[grid-area:3/1/1/13]",
+  area: "md:[grid-area:1/1/1/13]",
   title: "BR Docs",
   cover: (
     <CodeBlock

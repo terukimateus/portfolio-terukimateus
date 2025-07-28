@@ -52,7 +52,7 @@ function ExpandableCard({ cards }: ExpandableCardProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/20 backdrop-blur-xs h-full w-full z-10"
+            className="fixed inset-0 bg-black/20 backdrop-blur-xs h-full w-full z-100"
           />
         )}
       </AnimatePresence>
@@ -150,7 +150,7 @@ function ExpandableCard({ cards }: ExpandableCardProps) {
           </div>
         ) : null}
       </AnimatePresence>
-      <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3  xl:w-4/5">
+      <ul className="grid grid-cols-1 z-10 gap-4 md:grid-cols-2 lg:grid-cols-3  xl:w-4/5">
         {cards.map((card) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}

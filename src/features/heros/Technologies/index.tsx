@@ -47,11 +47,14 @@ const icons = [
 ];
 
 const Technologies = () => (
-  <div className="my-10 md:my-14 gap-10 rounded-md flex flex-col antialiased items-center justify-center relative overflow-hidden">
+  <div
+    id="tech"
+    className="my-10 md:my-14 gap-10 rounded-md flex flex-col antialiased items-center justify-center relative overflow-hidden"
+  >
     <span className="text-4xl text-transparent relative bg-gradient-to-l from-foreground to-neutral-500 text-center bg-clip-text font-bold">
       Technologies I work with
     </span>
-    <MovingTechs items={icons} direction="right" speed="fast" />
+    <MovingTechs items={icons} direction="left" speed="fast" />
   </div>
 );
 

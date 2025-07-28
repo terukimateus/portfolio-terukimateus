@@ -168,7 +168,7 @@ const Sparkles = () => {
 };
 
 const DamoreCard = {
-  area: "md:[grid-area:7/1/3/6]",
+  area: "md:[grid-area:7/1/2/6]",
   title: "D'amore Boutique",
   cover: <Skeleton />,
   extra: (

@@ -7,7 +7,7 @@ type GlowingCardProps = {
 
 export function GlowingCards({ cards }: GlowingCardProps) {
   return (
-    <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-4 lg:gap-4 xl:w-4/6">
+    <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-2 lg:gap-4 xl:w-3/6">
       {cards.map((card, index) => (
         <GridItem {...card} key={index} />
       ))}

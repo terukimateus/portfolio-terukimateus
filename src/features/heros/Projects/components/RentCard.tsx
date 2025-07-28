@@ -2,7 +2,7 @@ import GlowingButton from "@/components/GlowingButton";
 import Icon from "@/components/Icon";
 
 const RentCard = {
-  area: "md:[grid-area:7/6/3/13]",
+  area: "md:[grid-area:7/6/2/13]",
   title: "Rent a Court",
   cover: (
     <div className="w-full overflow-hidden p-4 rounded-xl border bg-card border-gray-300 dark:border-gray-700">

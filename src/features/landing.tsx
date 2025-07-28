@@ -3,6 +3,7 @@ import Technologies from "./heros/Technologies";
 import NavbarFeat from "@/components/Navbar";
 import Projects from "./heros/Projects";
 import Posts from "./heros/Posts";
+import Footer from "./heros/Footer";
 
 const LandingPage = () => {
   return (
@@ -16,6 +17,8 @@ const LandingPage = () => {
       <Technologies />
 
       <Posts />
+
+      <Footer />
     </div>
   );
 };
