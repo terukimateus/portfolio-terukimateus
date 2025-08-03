@@ -1,7 +1,7 @@
 import type { Card } from "@/components/ExpandableCards";
 import Markdown, { type Components } from "react-markdown";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import { arta } from "react-syntax-highlighter/dist/cjs/styles/hljs";
+import { arta } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import remarkGfm from "remark-gfm";
 
 const customMarkdownComponents: Components = {
