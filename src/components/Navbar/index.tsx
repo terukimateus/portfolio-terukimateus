@@ -13,15 +13,28 @@ import {
 import Icon from "../Icon";
 
 const navItems = [
-  { name: "Home", link: "#" },
-  { name: "About", link: "#about" },
-  { name: "Projects", link: "#projects" },
-  { name: "Contact", link: "#contact" },
+  { name: "Home", link: "home" },
+  { name: "Projects", link: "projects" },
+  { name: "Articles", link: "articles" },
 ];
 
 const NavbarFeat = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const onClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    section: string
+  ) => {
+    event.preventDefault();
+
+    const element = document.getElementById(section);
+    if (!element) return;
+    setIsMobileMenuOpen(false);
+    window.scrollTo({
+      top: element.offsetTop - 100,
+      behavior: "smooth",
+    });
+  };
   return (
     <Navbar>
       {/* Desktop Navigation */}
@@ -59,8 +72,9 @@ const NavbarFeat = () => {
           {navItems.map((item, idx) => (
             <a
               key={`mobile-link-${idx}`}
-              href={item.link}
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={(event) => {
+                onClick(event, item.link);
+              }}
               className="relative text-neutral-600 dark:text-neutral-300"
             >
               <span className="block">{item.name}</span>

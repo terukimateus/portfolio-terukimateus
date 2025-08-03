@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { Spotlight } from "../Spotlight";
+import { motion } from "motion/react";
 import HoverButtonGradient from "../HoverButtonGradient";
 
 type GridBackgroundProps = {
@@ -8,7 +9,10 @@ type GridBackgroundProps = {
 
 function GridBackgroundDemo({ title }: GridBackgroundProps) {
   return (
-    <div className="relative flex md:h-[50rem] h-screen w-full items-center justify-center bg-white dark:bg-background overflow-hidden">
+    <section
+      id="home"
+      className="relative flex md:h-[50rem] h-screen w-full items-center justify-center bg-white dark:bg-background overflow-hidden"
+    >
       <div
         className={cn(
           "absolute inset-0",
@@ -19,8 +23,17 @@ function GridBackgroundDemo({ title }: GridBackgroundProps) {
       />
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-background"></div>
       <Spotlight />
-      <div className="w-[90%] flex flex-col items-center gap-4 z-20">
-        <div className="flex items-center lg:gap-4 flex-wrap justify-center">
+      <motion.div
+        initial={{ opacity: 0, y: 50, scale: 0.95 }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          transition: { duration: 0.6, ease: "easeOut" },
+        }}
+        className="w-[90%] flex flex-col items-center gap-4 z-20"
+      >
+        <div className="flex items-center md:gap-4 flex-wrap justify-center">
           <span className="text-5xl sm:text-7xl font-regular text-foreground">
             Hello, I'm
           </span>
@@ -43,8 +56,8 @@ function GridBackgroundDemo({ title }: GridBackgroundProps) {
         >
           <span className="text-md">Get in Touch</span>
         </HoverButtonGradient>
-      </div>
-    </div>
+      </motion.div>
+    </section>
   );
 }
 

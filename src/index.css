@@ -1,10 +1,12 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
 * {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -49,6 +51,7 @@ body {
   --color-sidebar-ring: var(--sidebar-ring);
   --animate-scroll: scroll var(--animation-duration, 40s)
     var(--animation-direction, forwards) linear infinite;
+  --animate-move: move 5s linear infinite;
 }
 
 :root {
@@ -87,7 +90,7 @@ body {
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
+  --background: rgb(15.8, 15.8, 15);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
@@ -123,6 +126,19 @@ body {
 @keyframes scroll {
   to {
     transform: translate(calc(-50% - 0.5rem));
+  }
+}
+
+.animate-scroll {
+  animation: var(--animate-scroll);
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(-200px);
+  }
+  100% {
+    transform: translateX(200px);
   }
 }
 

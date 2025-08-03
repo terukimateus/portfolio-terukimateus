@@ -1,3 +1,4 @@
+import useScreen from "@/hooks/useScreen";
 import { cn } from "@/lib/utils";
 import { IconMenu2, IconX } from "@tabler/icons-react";
 import {
@@ -7,7 +8,7 @@ import {
   useMotionValueEvent,
 } from "motion/react";
 
-import React, { useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 
 interface NavbarProps {
   children: React.ReactNode;
@@ -110,12 +111,39 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
   );
 };
 
-export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
-  const [hovered, setHovered] = useState<number | null>(null);
+export const NavItems = ({ items, className }: NavItemsProps) => {
+  const [activeSection, setActiveSection] = useState<string | null>(null);
+  const { handleScroll } = useScreen();
+
+  const setActive = useCallback(() => {
+    setActiveSection(handleScroll());
+  }, [handleScroll]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", setActive);
+    return () => {
+      window.removeEventListener("scroll", setActive);
+    };
+  }, [setActive]);
+
+  const onClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    section: string
+  ) => {
+    event.preventDefault();
+
+    const element = document.getElementById(section);
+    if (!element) return;
+
+    setActiveSection(section);
+    window.scrollTo({
+      top: element.offsetTop - 100,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <motion.div
-      onMouseLeave={() => setHovered(null)}
       className={cn(
         "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium text-zinc-600 transition duration-200 hover:text-zinc-800 lg:flex lg:space-x-2",
         className
@@ -123,16 +151,19 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
     >
       {items.map((item, idx) => (
         <a
-          onMouseEnter={() => setHovered(idx)}
-          onClick={onItemClick}
-          className="relative px-4 py-2 text-neutral-600 dark:text-neutral-300"
+          onClick={(event) => {
+            onClick(event, item.link);
+          }}
+          className="relative px-3 py-2 rounded-full text-neutral-600 dark:text-neutral-300"
           key={`link-${idx}`}
-          href={item.link}
+          href={`#${item.link}`}
         >
-          {hovered === idx && (
+          {activeSection === item.link && (
             <motion.div
-              layoutId="hovered"
-              className="absolute inset-0 h-full w-full rounded-full bg-gray-100 dark:bg-neutral-800"
+              initial={{ opacity: 0.5 }}
+              animate={{ opacity: 1 }}
+              layoutId="navbar-active"
+              className="absolute inset-0 h-full w-full rounded-full bg-gray-50 dark:bg-neutral-700"
             />
           )}
           <span className="relative z-20">{item.name}</span>
@@ -228,10 +259,7 @@ export const MobileNavToggle = ({
 
 export const NavbarLogo = () => {
   return (
-    <a
-      href="#"
-      className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
-    >
+    <a className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black">
       <span className="font-medium text-foreground text-2xl ">{"<m/>"}</span>
     </a>
   );
