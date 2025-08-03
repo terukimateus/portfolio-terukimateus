@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@import "@tailwindcss/typography";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -90,7 +90,7 @@ body {
 }
 
 .dark {
-  --background: oklch(15.907% 0.00002 271.152);
+  --background: rgb(15.8, 15.8, 15);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);

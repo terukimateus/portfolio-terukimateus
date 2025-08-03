@@ -14,7 +14,7 @@ const Posts = () => {
 
       <HoverButtonGradient>
         <a
-          href="https://ui.aceternity.com/templates"
+          href=""
           target="_blank"
           rel="noopener noreferrer"
           className="text-md font-normal"

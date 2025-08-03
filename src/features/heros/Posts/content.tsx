@@ -30,7 +30,7 @@ const cards: Card[] = [
       "Useful tips and tricks to master Jest and React Testing Library.",
     title: "How to Master Jest and React Testing Library",
     src: "src/assets/jest-post.png",
-    ctaLink: "#",
+    ctaLink: "",
     posted: "08/05/2025",
     readTime: "10 min",
     groups: ["Jest", "Testing"],
@@ -77,7 +77,7 @@ Thank you for reading this article about how to master Jest and React Testing Li
     posted: "08/02/2025",
     readTime: "15 min",
     groups: ["Arrow Function", "Javascript", "Functions"],
-    ctaLink: "#",
+    ctaLink: "",
     content: () => {
       return (
         <div className="prose dark:prose-invert max-w-none">
@@ -176,7 +176,7 @@ Thank you for reading this article about the differences between functions and a
     posted: "08/12/2025",
     readTime: "10 min",
     groups: ["Typescript", "Tips", "Object Mapping"],
-    ctaLink: "#",
+    ctaLink: "",
     content: () => {
       return (
         <div className="prose dark:prose-invert max-w-none">
