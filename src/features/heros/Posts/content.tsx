@@ -189,7 +189,7 @@ Object mapping is a powerful feature in TypeScript that allows you to transform 
 
 ## Key Features of Object Mapping
 - **Type Safety**: TypeScript ensures that the properties of the mapped object match the expected types, reducing runtime errors.
-- **Readability**: Object mapping makes your code more readable and maintainable by clearly defining
+- **Readability**: Object mapping makes your code more readable and maintainable by clearly defining the structure and transformation of your data.
 - **Open-Closed Principle**: You can easily extend the mapping logic without modifying existing code, adhering to the open-closed principle of software design.
 
 ## Bad Example
