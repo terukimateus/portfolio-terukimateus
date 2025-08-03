@@ -82,30 +82,38 @@ function ExpandableCard({ cards }: ExpandableCardProps) {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full max-w-[700px]  h-full md:h-fit md:max-h-[90%] flex flex-col bg-white dark:bg-neutral-900 sm:rounded-lg overflow-hidden"
+              className="w-full max-w-[700px] h-full md:h-fit md:max-h-[90%] flex flex-col bg-white dark:bg-neutral-900 sm:rounded-lg overflow-auto md:overflow-hidden"
             >
               <motion.div
                 layoutId={`image-${active.title}-${id}`}
-                className="relative w-full h-48 overflow-hidden"
+                className="relative w-full md:overflow-hidden"
               >
                 <img
                   src={active.src}
                   alt={active.title}
-                  className="w-full h-full object-cover transition-transform duration-300"
+                  className="w-full h-full object-contain transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
                   <div className="flex items-center gap-2 text-white/80 text-sm mb-2">
                     <span>{active.posted}</span>
                     <span>{active.readTime}</span>
                   </div>
                   <div className="flex items-center flex-wrap gap-2 justify-between">
-                    <motion.h3
-                      layoutId={`title-${active.title}-${id}`}
-                      className="font-medium text-xl text-neutral-800 dark:text-neutral-200 text-left"
-                    >
-                      {active.title}
-                    </motion.h3>
+                    <div>
+                      <motion.h3
+                        layoutId={`title-${active.title}-${id}`}
+                        className="font-medium text-xl text-neutral-800 dark:text-neutral-200 text-left"
+                      >
+                        {active.title}
+                      </motion.h3>
+                      <motion.p
+                        layoutId={`description-${active.description}-${id}`}
+                        className="text-neutral-600 dark:text-neutral-400"
+                      >
+                        {active.description}
+                      </motion.p>
+                    </div>
                     <motion.a
                       layoutId={`button-${active.title}-${id}`}
                       href={active.ctaLink}
@@ -122,23 +130,13 @@ function ExpandableCard({ cards }: ExpandableCardProps) {
               </motion.div>
 
               <div>
-                <div className="flex justify-between items-start p-4">
-                  <div className="">
-                    <motion.p
-                      layoutId={`description-${active.description}-${id}`}
-                      className="text-neutral-600 dark:text-neutral-400"
-                    >
-                      {active.description}
-                    </motion.p>
-                  </div>
-                </div>
                 <div className="pt-4 relative px-4">
                   <motion.div
                     layout
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="text-neutral-600 text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
+                    className="text-sm lg:text-base h-auto md:h-[30rem] pb-10 flex flex-col items-start gap-4 md:overflow-scroll [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
                   >
                     {typeof active.content === "function"
                       ? active.content()
