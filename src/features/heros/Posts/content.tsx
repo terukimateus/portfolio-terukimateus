@@ -28,7 +28,7 @@ const cards: Card[] = [
   {
     description:
       "Useful tips and tricks to master Jest and React Testing Library.",
-    title: "How masterize Jest and React Testing Library",
+    title: "How to Master Jest and React Testing Library",
     src: "src/assets/jest-post.png",
     ctaLink: "#",
     posted: "08/05/2025",
