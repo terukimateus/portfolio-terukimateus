@@ -24,13 +24,13 @@ const brDocsCard = {
     <div className="flex flex-wrap gap-2">
       <GlowingButton
         icon={<Icon family="Lucide" name="LuGithub" size={18} />}
-        href=""
+        href="https://github.com/terukimateus/br-docs"
       >
         View on GitHub
       </GlowingButton>
       <GlowingButton
         icon={<Icon family="Lucide" name="LuLink" size={18} />}
-        href="https://br-docs.vercel.app/"
+        href="https://www.npmjs.com/package/br-docs"
         target="_blank"
       >
         Package

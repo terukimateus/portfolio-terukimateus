@@ -174,14 +174,8 @@ const DamoreCard = {
   extra: (
     <div className="flex flex-wrap gap-2">
       <GlowingButton
-        icon={<Icon family="Lucide" name="LuGithub" size={18} />}
-        href=""
-      >
-        View on GitHub
-      </GlowingButton>
-      <GlowingButton
         icon={<Icon family="Lucide" name="LuLink" size={18} />}
-        href="https://damore-boutique.vercel.app/"
+        href="https://damoreboutique.com.br/"
         target="_blank"
       >
         Website

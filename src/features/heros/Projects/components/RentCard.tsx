@@ -5,7 +5,7 @@ const RentCard = {
   area: "md:[grid-area:7/6/2/13]",
   title: "Rent a Court",
   cover: (
-    <div className="w-full overflow-hidden p-4 rounded-xl border bg-card border-gray-300 dark:border-gray-700">
+    <div className="w-full overflow-hidden p-1.5 rounded-2xl border bg-card border-gray-300 dark:border-gray-700">
       <img
         src="src/assets/rentacourt.png"
         alt="Rent a Court"
@@ -17,13 +17,13 @@ const RentCard = {
     <div className="flex flex-wrap gap-2">
       <GlowingButton
         icon={<Icon family="Lucide" name="LuGithub" size={18} />}
-        href=""
+        href="https://github.com/terukimateus/agendamento-quadra"
       >
         View on GitHub
       </GlowingButton>
       <GlowingButton
         icon={<Icon family="Lucide" name="LuLink" size={18} />}
-        href="https://rent-a-court.vercel.app/"
+        href="https://agendamento-quadras-cliente.vercel.app/"
         target="_blank"
       >
         Website
