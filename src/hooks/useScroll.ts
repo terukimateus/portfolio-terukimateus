@@ -12,5 +12,5 @@ export const useScrollAnimation = () => {
     }
   }, [animate, inView]);
 
-  return { ref, animate };
+  return { ref, inView, animate };
 };
