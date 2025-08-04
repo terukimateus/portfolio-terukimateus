@@ -3,6 +3,9 @@ import Markdown, { type Components } from "react-markdown";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { arta } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import remarkGfm from "remark-gfm";
+import ArrowFunctionImg from "/assets/arrowfunctions.svg";
+import JestImg from "/assets/jest-post.png";
+import ObjectMappingImg from "/assets/objectmapping.png";
 
 const customMarkdownComponents: Components = {
   pre: ({ children }) => (
@@ -29,7 +32,7 @@ const cards: Card[] = [
     description:
       "Useful tips and tricks to master Jest and React Testing Library.",
     title: "How to Master Jest and React Testing Library",
-    src: "src/assets/jest-post.png",
+    src: JestImg,
     ctaLink: "",
     posted: "08/05/2025",
     readTime: "10 min",
@@ -73,7 +76,7 @@ Thank you for reading this article about how to master Jest and React Testing Li
     description:
       "A deep dive into the differences between Functions and Arrow Functions in JavaScript.",
     title: "Differences between Functions and Arrow Functions",
-    src: "src/assets/arrowfunctions.svg",
+    src: ArrowFunctionImg,
     posted: "08/02/2025",
     readTime: "15 min",
     groups: ["Arrow Function", "Javascript", "Functions"],
@@ -172,7 +175,7 @@ Thank you for reading this article about the differences between functions and a
   {
     description: "How optimize your Typescript code with Object Mapping.",
     title: "Object Mapping",
-    src: "src/assets/objectmapping.png",
+    src: ObjectMappingImg,
     posted: "08/12/2025",
     readTime: "10 min",
     groups: ["Typescript", "Tips", "Object Mapping"],
