@@ -1,5 +1,6 @@
 import GlowingButton from "@/components/GlowingButton";
 import Icon from "@/components/Icon";
+import RentCourtImg from "/assets/rentacourt.png";
 
 const RentCard = {
   area: "md:[grid-area:7/6/2/13]",
@@ -7,7 +8,7 @@ const RentCard = {
   cover: (
     <div className="w-full overflow-hidden p-1.5 rounded-2xl border bg-card border-gray-300 dark:border-gray-700">
       <img
-        src="src/assets/rentacourt.png"
+        src={RentCourtImg}
         alt="Rent a Court"
         className="w-full rounded-xl object-cover"
       />
