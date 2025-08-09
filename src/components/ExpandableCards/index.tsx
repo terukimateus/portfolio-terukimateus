@@ -65,8 +65,7 @@ function ExpandableCard({ cards }: ExpandableCardProps) {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
-              transition={{ duration: 0.2, ease: "easeOut" }}
-              className="flex absolute top-2 right-2 lg:hidden items-center justify-center z-[100] bg-white rounded-full h-6 w-6"
+              className="flex absolute duration-[0.2] ease-in-out top-2 right-2 lg:hidden items-center justify-center z-[100] bg-white rounded-full h-6 w-6"
               onClick={() => setActive(null)}
               style={{ willChange: "transform, opacity" }}
             >
@@ -75,9 +74,8 @@ function ExpandableCard({ cards }: ExpandableCardProps) {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full max-w-[700px] h-full md:h-fit md:max-h-[90%] flex flex-col bg-white dark:bg-neutral-900 sm:rounded-lg overflow-auto md:overflow-hidden"
+              className="w-full transition-0-3s max-w-[700px] h-full md:h-fit md:max-h-[90%] flex flex-col bg-white dark:bg-neutral-900 sm:rounded-lg overflow-auto md:overflow-hidden"
               style={{ willChange: "transform" }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
             >
               <motion.div
                 layoutId={`image-${active.title}-${id}`}
@@ -117,10 +115,9 @@ function ExpandableCard({ cards }: ExpandableCardProps) {
                     <motion.a
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.2, duration: 0.2 }}
                       href={active.ctaLink}
                       target="_blank"
-                      className="relative inline-flex h-8 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
+                      className="relative delay-[0.2] duration-[0.2] inline-flex h-8 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
                       style={{ willChange: "transform, opacity" }}
                     >
                       <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#CBE8FF_0%,#3988B2_50%,#CBE8FF_100%)]" />
@@ -138,8 +135,7 @@ function ExpandableCard({ cards }: ExpandableCardProps) {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 20 }}
-                    transition={{ delay: 0.1, duration: 0.3 }}
-                    className="text-sm lg:text-base h-auto md:h-[30rem] pb-10 flex flex-col items-start gap-4 md:overflow-scroll [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
+                    className="text-sm lg:text-base delay-[0.1] duration-[0.3] h-auto md:h-[30rem] pb-10 flex flex-col items-start gap-4 md:overflow-scroll [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
                     style={{ willChange: "transform, opacity" }}
                   >
                     {typeof active.content === "function"
@@ -160,12 +156,7 @@ function ExpandableCard({ cards }: ExpandableCardProps) {
             onClick={() => setActive(card)}
             whileHover={{ y: -5 }}
             whileTap={{ scale: 0.98 }}
-            transition={{
-              duration: 0.2,
-              ease: "easeOut",
-              layout: { duration: 0.3, ease: "easeInOut" },
-            }}
-            className="flex flex-col justify-between bg-card items-center rounded-md cursor-pointer border dark:border-neutral-700 overflow-hidden transform-gpu"
+            className="flex flex-col duration-[0.2] ease-out  justify-between bg-card items-center rounded-md cursor-pointer border dark:border-neutral-700 overflow-hidden transform-gpu"
             style={{ willChange: "transform" }}
           >
             <motion.div
@@ -215,9 +206,8 @@ function ExpandableCard({ cards }: ExpandableCardProps) {
               </div>
               <div>
                 <motion.button
-                  className="text-sm rounded-full flex items-center gap-1 cursor-pointer"
+                  className="text-sm duration-[0.1] rounded-full flex items-center gap-1 cursor-pointer"
                   whileTap={{ scale: 0.95 }}
-                  transition={{ duration: 0.1 }}
                 >
                   Read more
                   <Icon family="Lucide" name="LuArrowRight" size={18} />
@@ -237,7 +227,6 @@ export const CloseIcon = () => {
       initial={{ opacity: 0, rotate: -90 }}
       animate={{ opacity: 1, rotate: 0 }}
       exit={{ opacity: 0, rotate: 90 }}
-      transition={{ duration: 0.2 }}
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -247,7 +236,7 @@ export const CloseIcon = () => {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="h-4 w-4 text-black"
+      className="h-4 w-4 text-black duration-[0.2]"
       style={{ willChange: "transform, opacity" }}
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />

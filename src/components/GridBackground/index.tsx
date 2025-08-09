@@ -31,7 +31,7 @@ function GridBackgroundDemo({ title }: GridBackgroundProps) {
           scale: 1,
           transition: { duration: 0.6, ease: "easeOut" },
         }}
-        className="w-[90%] flex flex-col items-center gap-4 z-20"
+        className="w-[90%] duration-[0.6] ease-out flex flex-col items-center gap-4 z-20"
       >
         <div className="flex items-center md:gap-4 flex-wrap justify-center">
           <span className="text-5xl sm:text-7xl font-regular text-foreground">
