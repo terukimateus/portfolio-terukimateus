@@ -1,5 +1,3 @@
-"use client";
-
 import { cn } from "@/lib/utils";
 import React, { useEffect, useState, type ReactNode } from "react";
 
@@ -82,8 +80,8 @@ const MovingTechs = ({
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
       >
-        {items.map((item, idx) => (
-          <li className="relative shrink-0 " key={idx}>
+        {[...items, ...items].map((item, idx) => (
+          <li className="relative shrink-0" key={idx}>
             {item}
           </li>
         ))}

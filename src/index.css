@@ -133,6 +133,11 @@ body {
   animation: var(--animate-scroll);
 }
 
+.transition0-3s {
+  transition-duration: 0.3s;
+  animation: ease-in-out;
+}
+
 @keyframes move {
   0% {
     transform: translateX(-200px);
